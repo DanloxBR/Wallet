@@ -34,23 +34,44 @@ A Wallet API permite:
 
 ---
 
-## 🏗️ Arquitetura do Projeto
-
-wallet/
-│
-├── controller/ # Endpoints REST
-├── service/ # Regras de negócio
-├── repository/ # Comunicação com banco
-├── entity/ # Entidades JPA
-├── dto/ # Data Transfer Objects
-├── config/ # Segurança, JWT, Swagger
-├── exception/ # Tratamento global de erros
-└── util/ # Classes utilitárias
-
 
 ---
 
-## ⚙️ Configuração
+### 🧠 Responsabilidade de Cada Camada
+
+#### 🎯 Controller
+- Recebe requisições HTTP
+- Valida dados de entrada
+- Retorna respostas (JSON)
+
+#### ⚙️ Service
+- Contém a lógica de negócio
+- Valida regras (ex: saldo suficiente)
+- Orquestra operações
+
+#### 💾 Repository
+- Comunicação com banco de dados
+- Interfaces do Spring Data JPA
+
+#### 🧱 Entity
+- Representação das tabelas no banco
+
+#### 📦 DTO
+- Evita expor entidades diretamente
+- Controla entrada/saída de dados
+
+#### 🔐 Security
+- Autenticação e autorização (JWT)
+- Filtros de segurança
+
+#### ⚠️ Exception
+- Tratamento global de erros
+- Padronização de respostas
+
+#### 🛠️ Util
+- Funções auxiliares reutilizáveis
+
+---
 
 ### 🔧 Pré-requisitos
 
